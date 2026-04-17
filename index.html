@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PRABUDDHA 2026 | Tech Fest</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<script>
+  //  backend base URL here.
+  // For local dev:   'http://localhost:5000'
+  // For production:  'https://your-deployed-api.example.com'
+  const API_BASE = 'http://localhost:5000';
+</script>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">PRABUDDHA<span>.</span>26</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#register">Register</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-auth" id="navAuth">
+    <!-- Populated by updateAuthUI() -->
+    <button class="btn-nav-login" onclick="openAuthModal('login')">Login</button>
+    <a href="#register" class="nav-cta">Register Now</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-badge">⚡ Techno International New Town · April 2026</div>
+  <h1 class="hero-title">
+    <span class="cyan">PRABU</span><span class="orange">DDHA</span><br/>2026
+  </h1>
+  <p class="hero-sub">// INNOVATE · CREATE · ILLUMINATE //</p>
+  <p class="hero-desc">
+    India's next-generation tech fest — where coders, builders, and innovators
+    converge to shape tomorrow. Competitions, workshops, guest lectures and more.
+  </p>
+  <div class="hero-btns">
+    <a href="#register" class="btn-primary">Register Now</a>
+    <a href="#events" class="btn-outline">View Events</a>
+    <a href="#contact" class="btn-outline">Contact Us</a>
+  </div>
+
+  <div class="countdown-wrap">
+    <div class="countdown-label">// Event Countdown //</div>
+    <div class="countdown">
+      <div class="cd-unit"><span class="cd-num" id="cd-days">00</span><div class="cd-lbl">DAYS</div></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-hrs">00</span><div class="cd-lbl">HOURS</div></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-min">00</span><div class="cd-lbl">MINUTES</div></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-sec">00</span><div class="cd-lbl">SECONDS</div></div>
+    </div>
+  </div>
+
+  <div class="social-strip">
+    <a href="https://tint.edu.in/" target="_blank" class="social-link">🌐 TINT Website</a>
+    <a href="https://www.facebook.com/tint.edu.in" target="_blank" class="social-link">📘 Facebook</a>
+    <a href="https://www.instagram.com/technointernationalnewtown/" target="_blank" class="social-link">📸 Instagram</a>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="section-inner">
+    <div class="section-tag">// 01 — About the Fest</div>
+    <h2 class="section-title">What is <span>PRABUDDHA</span>?</h2>
+    <div class="section-line"></div>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>PRABUDDHA 2026 is the flagship technical and innovation festival of Techno International New Town, bringing together students, developers, and innovators from across the country.</p>
+        <h3>Our History</h3>
+        <p>Since its inception, PRABUDDHA has grown into one of Eastern India's most prestigious college tech fests, hosting 500+ participants, 20+ events, and industry-leading guest mentorship sessions each year.</p>
+        <h3>Organizing Committee</h3>
+        <div class="committee-grid">
+          <div class="member-card"><div class="member-avatar">D</div><div class="member-name">Dipan</div><div class="member-role">Organizer</div></div>
+          <div class="member-card"><div class="member-avatar">R</div><div class="member-name">Rakhi</div><div class="member-role">Organizer</div></div>
+          <div class="member-card"><div class="member-avatar">AR</div><div class="member-name">Asifur Rahaman</div><div class="member-role">Organizer</div></div>
+          <div class="member-card"><div class="member-avatar">A</div><div class="member-name">Anindya</div><div class="member-role">Organizer</div></div>
+          <div class="member-card"><div class="member-avatar">AK</div><div class="member-name">Ayushi Kundu</div><div class="member-role">Organizer</div></div>
+          <div class="member-card"><div class="member-avatar">RL</div><div class="member-name">Ram Lal Foods</div><div class="member-role">Food sponsor</div></div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="stat-grid">
+          <div class="stat-card"><span class="stat-num">500+</span><div class="stat-desc">Participants Expected</div></div>
+          <div class="stat-card"><span class="stat-num">20+</span><div class="stat-desc">Events & Workshops</div></div>
+          <div class="stat-card"><span class="stat-num">₹1L+</span><div class="stat-desc">Prize Pool</div></div>
+          <div class="stat-card"><span class="stat-num">10+</span><div class="stat-desc">Industry Speakers</div></div>
+        </div>
+        <div class="video-wrap" style="margin-top:1.5rem;">
+          <iframe src="https://www.youtube.com/embed/oS375PRA6nI"
+            title="PRABUDDHA Promo" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- EVENTS -->
+<section id="events" class="section">
+  <div class="section-inner">
+    <div class="section-tag">// 02 — Events & Competitions</div>
+    <h2 class="section-title">What's <span>Happening</span></h2>
+    <div class="section-line"></div>
+
+    <div class="event-filter reveal">
+      <button class="filter-btn active" onclick="filterEvents('all',this)">All</button>
+      <button class="filter-btn" onclick="filterEvents('Coding',this)">Coding</button>
+      <button class="filter-btn" onclick="filterEvents('AI/ML',this)">AI / ML</button>
+      <button class="filter-btn" onclick="filterEvents('Robotics',this)">Robotics</button>
+      <button class="filter-btn" onclick="filterEvents('Web Dev',this)">Web Dev</button>
+      <button class="filter-btn" onclick="filterEvents('Workshop',this)">Workshops</button>
+    </div>
+
+    <div class="events-grid" id="eventsGrid">
+      <div class="events-loading"><span class="spinner"></span> LOADING EVENTS...</div>
+    </div>
+
+    <h3 style="font-family:'Orbitron',sans-serif;font-size:1rem;margin:3rem 0 1rem;color:var(--accent)">Event Schedule</h3>
+    <table class="schedule-table reveal">
+      <thead>
+        <tr><th>Time</th><th>Event</th><th>Category</th><th>Venue</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="time-badge">09:30 AM</span></td><td>Inauguration</td><td>—</td><td>Seminar Room</td></tr>
+        <tr><td><span class="time-badge">09:30 AM</span></td><td>Cook your Code</td><td>Coding</td><td>R-213</td></tr>
+        <tr><td><span class="time-badge">10:00 AM</span></td><td>Dev your Web</td><td>Coding</td><td>R-211</td></tr>
+        <tr><td><span class="time-badge">10:00 AM</span></td><td>Robo Challenge</td><td>Robotics</td><td>R-309</td></tr>
+        <tr><td><span class="time-badge">01:00 PM</span></td><td>Lunch</td><td>—</td><td>Campus Grounds</td></tr>
+        <tr><td><span class="time-badge">02:00 PM</span></td><td>Cypher Climb</td><td>—</td><td>R-218</td></tr>
+        <tr><td><span class="time-badge">02:30 PM</span></td><td>Dev Vibe</td><td>—</td><td>R-309</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- EVENT MODAL -->
+<div class="modal-overlay" id="eventModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h2 id="modal-title">Event Name</h2>
+    <p style="color:#8aa0bb;margin-bottom:1rem;" id="modal-desc"></p>
+    <p style="font-size:0.8rem;font-family:'Share Tech Mono',monospace;color:var(--accent2);margin-bottom:1rem;" id="modal-cat"></p>
+    <div id="modal-meta" style="margin-bottom:1.5rem;"></div>
+    <h4 style="font-family:'Orbitron',sans-serif;font-size:0.85rem;color:var(--accent);margin-bottom:0.5rem;">RULES & ELIGIBILITY</h4>
+    <ul class="modal-rules" id="modal-rules"></ul>
+    <a href="#register" class="btn-primary" onclick="closeModal()" style="display:inline-block;font-size:0.8rem;">Register for this Event</a>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- REGISTER -->
+<section id="register" class="section">
+  <div class="section-inner">
+    <div class="section-tag">// 03 — Registration</div>
+    <h2 class="section-title">Join <span>PRABUDDHA 2026</span></h2>
+    <div class="section-line"></div>
+
+    <div class="reg-grid">
+      <div class="reg-info reveal">
+        <h3>Who Can Register?</h3>
+        <p>Open to all undergraduate and postgraduate students. Register as a participant, volunteer, or faculty advisor.</p>
+        <p>Individual or team registrations are accepted. Team size varies by event (1–4 members).</p>
+        <h3 style="margin-top:1.5rem;">Deadlines</h3>
+        <p>🗓 Early Bird: <strong style="color:var(--accent)">March 31, 2026</strong><br/>
+        🗓 Last Date: <strong style="color:var(--accent)">April 10, 2026</strong></p>
+        <h3 style="margin-top:1.5rem;">What You Get</h3>
+        <p>Participation Certificate<br/>Access to all workshops<br/>Networking & goodies<br/>Winner trophies & prizes</p>
+
+        <!-- My Registrations (shown when logged in) -->
+        <div id="myRegsSection" style="display:none;margin-top:2rem;">
+          <h3>My Registered Events <span class="my-regs-badge" id="myRegsCount">0</span></h3>
+          <div id="myRegsList" style="margin-top:1rem;"></div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <!-- Auth tabs: Register / Login -->
+        <div id="regFormWrap">
+          <div class="auth-tabs" id="authTabs">
+            <button class="auth-tab active" id="tabRegister" onclick="switchAuthTab('register')">New Registration</button>
+            <button class="auth-tab" id="tabLogin" onclick="switchAuthTab('login')">Already Registered? Login</button>
+          </div>
+
+          <!-- REGISTER PANEL -->
+          <div class="auth-panel active" id="panelRegister">
+            <div class="role-tabs">
+              <button class="role-tab active" onclick="switchRole('participant',this)">Participant</button>
+              <button class="role-tab" onclick="switchRole('volunteer',this)">Volunteer</button>
+              <button class="role-tab" onclick="switchRole('faculty',this)">Faculty</button>
+              <button class="role-tab" onclick="switchRole('organizer',this)">Organizer</button>
+            </div>
+            <div class="reg-form">
+              <form id="regForm" onsubmit="submitReg(event)">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" name="name" placeholder="Your name" required/>
+                  </div>
+                  <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="email" placeholder="you@example.com" required/>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required/>
+                  </div>
+                  <div class="form-group">
+                    <label>College Name *</label>
+                    <input type="text" name="college" placeholder="Your college" required/>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Year of Study *</label>
+                    <select name="year" required>
+                      <option value="">Select Year</option>
+                      <option value="1">1st Year</option>
+                      <option value="2">2nd Year</option>
+                      <option value="3">3rd Year</option>
+                      <option value="4">4th Year</option>
+                      <option value="5">Postgraduate</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Password *</label>
+                    <input type="password" name="password" placeholder="Min 6 characters" required minlength="6"/>
+                  </div>
+                </div>
+                <input type="hidden" name="role" id="roleInput" value="participant"/>
+                <div class="form-group" id="eventsField">
+                  <label>Select Event(s) *</label>
+                  <div class="checkbox-group" id="eventsCheckboxes">
+                    <!-- Populated from API -->
+                    <div style="color:var(--muted);font-size:0.8rem;font-family:'Share Tech Mono',monospace;">Loading events…</div>
+                  </div>
+                </div>
+                <button type="submit" class="submit-btn" id="regSubmitBtn">COMPLETE REGISTRATION →</button>
+              </form>
+              <div class="success-msg" id="successMsg"></div>
+              <div class="error-msg" id="regErrorMsg"></div>
+            </div>
+          </div>
+
+          <!-- LOGIN PANEL -->
+          <div class="auth-panel" id="panelLogin">
+            <div class="login-box">
+              <form id="loginForm" onsubmit="submitLogin(event)">
+                <div class="form-group">
+                  <label>Email *</label>
+                  <input type="email" name="email" placeholder="you@example.com" required/>
+                </div>
+                <div class="form-group">
+                  <label>Password *</label>
+                  <input type="password" name="password" placeholder="Your password" required/>
+                </div>
+                <button type="submit" class="submit-btn" id="loginSubmitBtn">LOGIN →</button>
+              </form>
+              <div class="success-msg" id="loginSuccessMsg"></div>
+              <div class="error-msg" id="loginErrorMsg"></div>
+            </div>
+          </div>
+
+          <!-- LOGGED-IN STATE (shown instead of forms) -->
+          <div id="loggedInPanel" style="display:none;background:var(--card);border:1px solid var(--border);padding:2rem;">
+            <div style="font-family:'Share Tech Mono',monospace;font-size:0.8rem;color:var(--accent);margin-bottom:0.5rem;">✅ LOGGED IN AS</div>
+            <div style="font-family:'Orbitron',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;" id="loggedInName"></div>
+            <div style="font-size:0.85rem;color:var(--muted);margin-bottom:1.5rem;" id="loggedInEmail"></div>
+
+            <h4 style="font-family:'Orbitron',sans-serif;font-size:0.85rem;color:var(--accent);margin-bottom:1rem;">REGISTER FOR MORE EVENTS</h4>
+            <form id="extraEventsForm" onsubmit="submitExtraEvents(event)">
+              <div class="form-group">
+                <div class="checkbox-group" id="extraEventsCheckboxes">
+                  <div style="color:var(--muted);font-size:0.8rem;font-family:'Share Tech Mono',monospace;">Loading events…</div>
+                </div>
+              </div>
+              <button type="submit" class="submit-btn" id="extraEventsBtn">ADD EVENT REGISTRATIONS →</button>
+            </form>
+            <div class="success-msg" id="extraEventsSuccess"></div>
+            <div class="error-msg" id="extraEventsError"></div>
+            <button onclick="logout()" style="margin-top:1rem;width:100%;background:transparent;border:1px solid rgba(255,107,0,0.4);color:var(--accent2);padding:10px;font-family:'Orbitron',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;cursor:pointer;">LOGOUT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div class="section-tag">// 04 — Contact & Queries</div>
+    <h2 class="section-title">Get In <span>Touch</span></h2>
+    <div class="section-line"></div>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <h3>Contact Details</h3>
+        <div class="contact-detail">
+          <div class="contact-icon">📍</div>
+          <div><strong>Address</strong><span>Techno International New Town, Action Area II, Newtown, Kolkata – 700156</span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">✉️</div>
+          <div><strong>Email</strong><span>prabuddha2026@tint.edu.in</span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">📞</div>
+          <div><strong>Phone</strong><span>+91 98765 43210 (Event Coordinator)</span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">🌐</div>
+          <div><strong>College Website</strong><span><a href="https://tint.edu.in/" target="_blank" style="color:var(--accent);">tint.edu.in</a></span></div>
+        </div>
+
+        <h3 style="margin-top:2rem;margin-bottom:1rem;">FAQ</h3>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Who can participate? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Any student currently enrolled in an undergraduate or postgraduate program from any recognized college or university in India.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Is there a registration fee? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Most events are free to register. Certain advanced workshops may have a nominal fee. Details are mentioned on each event card.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Can I register for multiple events? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Yes! You can select multiple events during registration as long as their timeslots do not overlap.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Will certificates be provided? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Yes, all registered participants will receive a digital participation certificate after the fest. Winners receive special achievement certificates and trophies.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">How do I get to the venue? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">TINT is located in Action Area II, Newtown, Kolkata and is accessible by metro, bus, and cab. Detailed directions are available on the college website.</div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="query-form">
+          <h3 style="font-family:'Orbitron',sans-serif;font-size:1rem;color:var(--accent);margin-bottom:1.5rem;">Submit a Query</h3>
+          <form id="queryForm" onsubmit="submitQuery(event)">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" name="name" placeholder="Your name" required/>
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" name="email" placeholder="you@example.com" required/>
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <select name="subject">
+                <option>General Inquiry</option>
+                <option>Event Details</option>
+                <option>Registration Help</option>
+                <option>Technical Issue</option>
+                <option>Sponsorship</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Your Message *</label>
+              <textarea name="question" rows="5" placeholder="Describe your query..." required style="resize:vertical;"></textarea>
+            </div>
+            <button type="submit" class="submit-btn" id="querySubmitBtn">SEND MESSAGE →</button>
+          </form>
+          <div class="success-msg" id="querySuccess"></div>
+          <div class="error-msg" id="queryErrorMsg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">PRABUDDHA</div>
+  <div class="footer-sub">// TECHNO INTERNATIONAL NEW TOWN · 2026 //</div>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#events">Events</a>
+    <a href="#register">Register</a>
+    <a href="#contact">Contact</a>
+    <a href="https://tint.edu.in/" target="_blank">College Website</a>
+  </div>
+  <div style="display:flex;gap:1rem;justify-content:center;margin-bottom:1.5rem;">
+    <a href="https://www.facebook.com/tint.edu.in" target="_blank" class="social-link">Facebook</a>
+    <a href="https://www.instagram.com/technointernationalnewtown/" target="_blank" class="social-link">Instagram</a>
+  </div>
+  <div class="footer-copy">© 2026 PRABUDDHA — <span class="college-name">Techno International New Town</span>. All rights reserved.</div>
+</footer>
+
+<script>
+    let currentUser = null;
+let currentToken = null;
+
+function loadAuthState() {
+  const token = localStorage.getItem('prabuddha_token');
+  const user  = localStorage.getItem('prabuddha_user');
+  if (token && user) {
+    try {
+      currentToken = token;
+      currentUser  = JSON.parse(user);
+    } catch {
+      clearAuthState();
+    }
+  }
+}
+
+function saveAuthState(token, user) {
+  currentToken = token;
+  currentUser  = user;
+  localStorage.setItem('prabuddha_token', token);
+  localStorage.setItem('prabuddha_user',  JSON.stringify(user));
+}
+
+function clearAuthState() {
+  currentToken = null;
+  currentUser  = null;
+  localStorage.removeItem('prabuddha_token');
+  localStorage.removeItem('prabuddha_user');
+}
+
+function isLoggedIn() {
+  return !!currentToken && !!currentUser;
+}
+
+function updateAuthUI() {
+  const navAuth = document.getElementById('navAuth');
+  if (isLoggedIn()) {
+    navAuth.innerHTML = `
+      <span class="nav-user-info">👤 ${currentUser.name || currentUser.email}</span>
+      <button class="btn-nav-logout" onclick="logout()">Logout</button>
+    `;
+    document.getElementById('loggedInPanel').style.display = 'block';
+    document.getElementById('authTabs').style.display      = 'none';
+    document.getElementById('panelRegister').style.display = 'none';
+    document.getElementById('panelLogin').style.display    = 'none';
+    document.getElementById('loggedInName').textContent    = currentUser.name  || '—';
+    document.getElementById('loggedInEmail').textContent   = currentUser.email || '—';
+    loadMyRegistrations();
+    populateExtraEventsCheckboxes();
+  } else {
+    navAuth.innerHTML = `
+      <button class="btn-nav-login" onclick="switchAuthTab('login')">Login</button>
+      <a href="#register" class="nav-cta">Register Now</a>
+    `;
+    document.getElementById('loggedInPanel').style.display = 'none';
+    document.getElementById('authTabs').style.display      = 'flex';
+    document.getElementById('myRegsSection').style.display = 'none';
+    switchAuthTab('register');
+  }
+}
+
+async function apiFetch(path, options = {}) {
+  const headers = { 'Content-Type': 'application/json', ...(options.headers || {}) };
+  if (currentToken) headers['Authorization'] = `Bearer ${currentToken}`;
+  const res = await fetch(`${API_BASE}${path}`, { ...options, headers });
+  const data = await res.json();
+  return { ok: res.ok, status: res.status, data };
+}
+
+let allEvents = [];   // cache
+
+async function loadEvents(category) {
+  const grid = document.getElementById('eventsGrid');
+  grid.innerHTML = '<div class="events-loading"><span class="spinner"></span> LOADING EVENTS...</div>';
+
+  try {
+    const url = category && category !== 'all'
+      ? `/api/events?category=${encodeURIComponent(category)}`
+      : '/api/events';
+    const { ok, data } = await apiFetch(url);
+    if (!ok) throw new Error(data.error || 'Failed to fetch events');
+
+    allEvents = data.events || [];
+    renderEventCards(allEvents);
+    populateEventCheckboxes();     // keep checkboxes in sync
+  } catch (err) {
+    grid.innerHTML = `<div class="events-error">⚠ Could not load events from server.<br><small>${err.message}</small></div>`;
+    // Fallback to static data so the page isn't empty
+    allEvents = staticFallbackEvents;
+    renderEventCards(allEvents);
+    populateEventCheckboxes();
+  }
+}
+
+function renderEventCards(events) {
+  const grid = document.getElementById('eventsGrid');
+  if (!events.length) {
+    grid.innerHTML = '<div class="events-loading" style="color:var(--muted)">No events found.</div>';
+    return;
+  }
+  grid.innerHTML = events.map(e => {
+    const schedDate = e.schedule ? new Date(e.schedule) : null;
+    const timeStr   = schedDate
+      ? schedDate.toLocaleDateString('en-IN', { month:'short', day:'numeric' }) + ', ' +
+        schedDate.toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' })
+      : '—';
+    // Rules as array
+    const rulesArr = e.rules
+      ? e.rules.split(/\.\s+|\n/).map(r => r.trim()).filter(Boolean)
+      : [];
+    const safeE = JSON.stringify({ ...e, _rulesArr: rulesArr }).replace(/'/g, '&apos;');
+    return `
+      <div class="event-card reveal" onclick='openModal(${safeE})'>
+        <div class="event-cat">${(e.category || '').toUpperCase()}</div>
+        <div class="event-name">${e.name}</div>
+        <div class="event-desc">${e.description}</div>
+        <div class="event-meta">
+          <span><strong>${timeStr}</strong></span>
+          <span><strong>${e.venue || '—'}</strong></span>
+        </div>
+        ${e.prize ? `<div class="prize-badge">${e.prize}</div>` : ''}
+      </div>
+    `;
+  }).join('');
+  observeReveal();
+}
+
+function filterEvents(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  loadEvents(cat === 'all' ? null : cat);
+}
+
+function populateEventCheckboxes() {
+  const container = document.getElementById('eventsCheckboxes');
+  if (!allEvents.length) {
+    container.innerHTML = '<div style="color:var(--muted);font-size:0.8rem;font-family:\'Share Tech Mono\',monospace;">No events available.</div>';
+    return;
+  }
+  container.innerHTML = allEvents.map(e => `
+    <label class="checkbox-item">
+      <input type="checkbox" name="event_ids" value="${e.event_id}"/> ${e.name}
+    </label>
+  `).join('');
+}
+
+function populateExtraEventsCheckboxes() {
+  const container = document.getElementById('extraEventsCheckboxes');
+  if (!allEvents.length) {
+    container.innerHTML = '<div style="color:var(--muted);font-size:0.8rem;">No events available.</div>';
+    return;
+  }
+  container.innerHTML = allEvents.map(e => `
+    <label class="checkbox-item">
+      <input type="checkbox" name="extra_event_ids" value="${e.event_id}"/> ${e.name}
+    </label>
+  `).join('');
+}
+
+function openModal(e) {
+  document.getElementById('modal-title').textContent = e.name;
+  document.getElementById('modal-desc').textContent  = e.description;
+  const schedDate = e.schedule ? new Date(e.schedule) : null;
+  const timeStr   = schedDate
+    ? schedDate.toLocaleDateString('en-IN', { month:'short', day:'numeric' }) + ', ' +
+      schedDate.toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' })
+    : '—';
+  document.getElementById('modal-cat').textContent =
+    `${e.category} | ${timeStr} | ${e.venue || '—'}${e.prize ? ' | Prize: ' + e.prize : ''}`;
+  const rules = e._rulesArr && e._rulesArr.length
+    ? e._rulesArr
+    : (e.rules ? [e.rules] : ['See event details on the day.']);
+  document.getElementById('modal-rules').innerHTML = rules.map(r => `<li>${r}</li>`).join('');
+  document.getElementById('eventModal').classList.add('open');
+}
+function closeModal() {
+  document.getElementById('eventModal').classList.remove('open');
+}
+document.getElementById('eventModal').addEventListener('click', function(ev) {
+  if (ev.target === this) closeModal();
+});
+
+async function submitReg(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = document.getElementById('regSubmitBtn');
+  const successEl = document.getElementById('successMsg');
+  const errorEl   = document.getElementById('regErrorMsg');
+  successEl.style.display = 'none';
+  errorEl.style.display   = 'none';
+
+  const selectedEventIds = [...form.querySelectorAll('input[name="event_ids"]:checked')]
+    .map(cb => parseInt(cb.value));
+
+  if (!selectedEventIds.length) {
+    errorEl.textContent = '⚠ Please select at least one event.';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> REGISTERING...';
+
+  try {
+    // Step 1: Create account
+    const payload = {
+      name:     form.name.value.trim(),
+      email:    form.email.value.trim(),
+      phone:    form.phone.value.trim(),
+      college:  form.college.value.trim(),
+      year:     parseInt(form.year.value),
+      password: form.password.value,
+      role:     form.role.value || 'participant',
+    };
+
+    const { ok: regOk, data: regData } = await apiFetch('/api/auth/register', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+
+    if (!regOk) {
+      const msg = regData.errors
+        ? regData.errors.map(err => err.msg).join(', ')
+        : (regData.error || 'Registration failed');
+      throw new Error(msg);
+    }
+
+    saveAuthState(regData.token, regData.user);
+
+    // Step 2: Register for selected events
+    const { ok: evOk, data: evData } = await apiFetch('/api/registrations', {
+      method: 'POST',
+      body: JSON.stringify({ event_ids: selectedEventIds }),
+    });
+
+    if (!evOk) {
+      // Account was created; warn but don't block
+      console.warn('Event registration partial failure:', evData.error);
+    }
+
+    successEl.textContent = `✅ Registration successful! Welcome, ${regData.user.name}. Confirmation sent to ${regData.user.email}.`;
+    successEl.style.display = 'block';
+    form.reset();
+    updateAuthUI();
+  } catch (err) {
+    errorEl.textContent = `⚠ ${err.message}`;
+    errorEl.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'COMPLETE REGISTRATION →';
+  }
+}
+
+async function submitLogin(e) {
+  e.preventDefault();
+  const form    = e.target;
+  const btn     = document.getElementById('loginSubmitBtn');
+  const successEl = document.getElementById('loginSuccessMsg');
+  const errorEl   = document.getElementById('loginErrorMsg');
+  successEl.style.display = 'none';
+  errorEl.style.display   = 'none';
+
+  btn.disabled    = true;
+  btn.innerHTML   = '<span class="spinner"></span> LOGGING IN...';
+
+  try {
+    const { ok, data } = await apiFetch('/api/auth/login', {
+      method: 'POST',
+      body: JSON.stringify({ email: form.email.value.trim(), password: form.password.value }),
+    });
+
+    if (!ok) throw new Error(data.error || 'Login failed');
+
+    saveAuthState(data.token, data.user);
+    successEl.textContent    = `✅ Welcome back, ${data.user.name}!`;
+    successEl.style.display  = 'block';
+    form.reset();
+    updateAuthUI();
+  } catch (err) {
+    errorEl.textContent = `⚠ ${err.message}`;
+    errorEl.style.display = 'block';
+  } finally {
+    btn.disabled    = false;
+    btn.textContent = 'LOGIN →';
+  }
+}
+
+async function submitExtraEvents(e) {
+  e.preventDefault();
+  const form       = e.target;
+  const btn        = document.getElementById('extraEventsBtn');
+  const successEl  = document.getElementById('extraEventsSuccess');
+  const errorEl    = document.getElementById('extraEventsError');
+  successEl.style.display = 'none';
+  errorEl.style.display   = 'none';
+
+  const selectedIds = [...form.querySelectorAll('input[name="extra_event_ids"]:checked')]
+    .map(cb => parseInt(cb.value));
+
+  if (!selectedIds.length) {
+    errorEl.textContent = '⚠ Please select at least one event.';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  btn.disabled  = true;
+  btn.innerHTML = '<span class="spinner"></span> REGISTERING...';
+
+  try {
+    const { ok, data } = await apiFetch('/api/registrations', {
+      method: 'POST',
+      body: JSON.stringify({ event_ids: selectedIds }),
+    });
+
+    if (!ok) throw new Error(data.error || 'Could not register for events');
+
+    successEl.textContent   = `✅ Registered for ${data.registrations?.length || selectedIds.length} event(s)!`;
+    successEl.style.display = 'block';
+    form.reset();
+    loadMyRegistrations();
+  } catch (err) {
+    errorEl.textContent = `⚠ ${err.message}`;
+    errorEl.style.display = 'block';
+  } finally {
+    btn.disabled    = false;
+    btn.textContent = 'ADD EVENT REGISTRATIONS →';
+  }
+}
+
+async function loadMyRegistrations() {
+  if (!isLoggedIn()) return;
+  const section  = document.getElementById('myRegsSection');
+  const list     = document.getElementById('myRegsList');
+  const countEl  = document.getElementById('myRegsCount');
+
+  try {
+    const { ok, data } = await apiFetch('/api/registrations/me');
+    if (!ok) throw new Error('Could not load');
+
+    section.style.display = 'block';
+    countEl.textContent   = data.length || 0;
+
+    if (!data.length) {
+      list.innerHTML = '<p style="color:var(--muted);font-size:0.85rem;">No events registered yet.</p>';
+      return;
+    }
+
+    list.innerHTML = data.map(reg => {
+      const ev   = reg.events || {};
+      const date = ev.schedule ? new Date(ev.schedule) : null;
+      const timeStr = date
+        ? date.toLocaleDateString('en-IN', { month:'short', day:'numeric' }) + ', ' +
+          date.toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' })
+        : '—';
+      return `
+        <div style="background:var(--card);border:1px solid var(--border);padding:0.8rem 1rem;margin-bottom:0.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;">
+          <div>
+            <div style="font-family:'Orbitron',sans-serif;font-size:0.8rem;color:var(--accent);">${ev.name || 'Event'}</div>
+            <div style="font-size:0.75rem;color:var(--muted);font-family:'Share Tech Mono',monospace;">${ev.category || ''} · ${timeStr} · ${ev.venue || ''}</div>
+          </div>
+          <button onclick="cancelRegistration(${reg.registration_id}, this)" style="background:transparent;border:1px solid rgba(255,107,0,0.3);color:var(--accent2);padding:4px 10px;font-size:0.7rem;font-family:'Orbitron',sans-serif;cursor:pointer;white-space:nowrap;">Cancel</button>
+        </div>
+      `;
+    }).join('');
+  } catch {
+    section.style.display = 'block';
+    list.innerHTML = '<p style="color:var(--muted);font-size:0.85rem;">Could not load registrations.</p>';
+  }
+}
+
+async function cancelRegistration(regId, btn) {
+  if (!confirm('Cancel this registration?')) return;
+  btn.disabled    = true;
+  btn.textContent = '…';
+  try {
+    const { ok, data } = await apiFetch(`/api/registrations/${regId}`, { method: 'DELETE' });
+    if (!ok) throw new Error(data.error || 'Could not cancel');
+    loadMyRegistrations();
+  } catch (err) {
+    alert('Error: ' + err.message);
+    btn.disabled    = false;
+    btn.textContent = 'Cancel';
+  }
+}
+
+async function submitQuery(e) {
+  e.preventDefault();
+  const form      = e.target;
+  const btn       = document.getElementById('querySubmitBtn');
+  const successEl = document.getElementById('querySuccess');
+  const errorEl   = document.getElementById('queryErrorMsg');
+  successEl.style.display = 'none';
+  errorEl.style.display   = 'none';
+
+  btn.disabled  = true;
+  btn.innerHTML = '<span class="spinner"></span> SENDING...';
+
+  try {
+    const { ok, data } = await apiFetch('/api/queries', {
+      method: 'POST',
+      body: JSON.stringify({
+        name:     form.name.value.trim(),
+        email:    form.email.value.trim(),
+        subject:  form.subject.value,
+        question: form.question.value.trim(),
+      }),
+    });
+
+    if (!ok) {
+      const msg = data.errors
+        ? data.errors.map(err => err.msg).join(', ')
+        : (data.error || 'Could not submit query');
+      throw new Error(msg);
+    }
+
+    successEl.textContent   = "✅ Query submitted! We'll respond within 24–48 hours.";
+    successEl.style.display = 'block';
+    form.reset();
+  } catch (err) {
+    errorEl.textContent = `⚠ ${err.message}`;
+    errorEl.style.display = 'block';
+  } finally {
+    btn.disabled    = false;
+    btn.textContent = 'SEND MESSAGE →';
+  }
+}
+
+function logout() {
+  clearAuthState();
+  updateAuthUI();
+}
+
+function switchAuthTab(tab) {
+  document.getElementById('tabRegister').classList.toggle('active', tab === 'register');
+  document.getElementById('tabLogin').classList.toggle('active', tab === 'login');
+  document.getElementById('panelRegister').classList.toggle('active', tab === 'register');
+  document.getElementById('panelLogin').classList.toggle('active', tab === 'login');
+}
+
+function switchRole(role, btn) {
+  document.querySelectorAll('.role-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('roleInput').value = role;
+  document.getElementById('eventsField').style.display = role === 'participant' ? 'block' : 'none';
+}
+
+const eventDate = new Date('2026-04-17T09:00:00');
+function updateCountdown() {
+  const diff = eventDate - new Date();
+  if (diff <= 0) {
+    document.querySelector('.countdown-wrap').innerHTML =
+      '<div style="color:var(--accent);font-family:Orbitron,sans-serif;font-size:1.5rem;">🎉 The fest is LIVE!</div>';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+  document.getElementById('cd-hrs').textContent  = String(h).padStart(2,'0');
+  document.getElementById('cd-min').textContent  = String(m).padStart(2,'0');
+  document.getElementById('cd-sec').textContent  = String(s).padStart(2,'0');
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+function toggleFaq(el) { el.classList.toggle('open'); }
+
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('mobile-open');
+}
+
+function observeReveal() {
+  const els = document.querySelectorAll('.reveal:not(.visible)');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  els.forEach(el => obs.observe(el));
+}
+
+
+const staticFallbackEvents = [
+  { event_id:1, category:'Coding',   name:'Cook Your Code', description:'Solve algorithmic challenges in 3 hours. Individual or duo.', schedule:'2026-04-17T09:30:00+05:30', venue:'R-213', prize:'₹15,000', rules:'Individual or 2-member teams. Languages: C, C++, Java, Python. No internet during contest. Plagiarism = disqualification.' },
+  { event_id:2, category:'Web Dev',  name:'Dev Your Web',   description:'Build a fully functional responsive website in under 3 hours from a given brief.', schedule:'2026-04-17T10:00:00+05:30', venue:'R-211', prize:'₹15,000', rules:'Individual or 2-member teams. HTML, CSS, JS and frameworks allowed. Judged on design and functionality.' },
+  { event_id:3, category:'Web Dev',  name:'Dev Vibe',       description:'Design and code a responsive website in 2 hours. No templates allowed.', schedule:'2026-04-17T14:30:00+05:30', venue:'R-309', prize:'₹10,000', rules:'Individual only. HTML, CSS, JS allowed. No frameworks or templates.' },
+  { event_id:4, category:'Robotics', name:'Robo Challenge',  description:'Build and battle your autonomous or RC-controlled robot in the arena.', schedule:'2026-04-17T13:30:00+05:30', venue:'Arena', prize:'₹20,000', rules:'Teams of 2–4. Robot weight max 5 kg. Battery powered only. Flame weapons not allowed.' },
+  { event_id:5, category:'Coding',   name:'Cypher Climb',   description:'A series of cryptographic puzzles and CTF challenges to crack step by step.', schedule:'2026-04-17T14:00:00+05:30', venue:'R-218', prize:'₹8,000', rules:'Individual or 2-member teams. 90-minute time limit. Hints cost points.' },
+];
+
+loadAuthState();
+updateAuthUI();
+loadEvents(null);
+observeReveal();
+</script>
+
+
+</body>
+</html>
